@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsApp Bonos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '1656275065008614');
+    fbq('track', 'PageView');
+  </script>raul01005
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1656275065008614&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     body {
@@ -199,7 +217,9 @@
   <hr />
 
   <section class="verified">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
+    <a href="https://wa.me/5491126251957" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
+    </a>
     <h2>✅ <b>Plataforma Verificada</b> ✅</h2>
     <p class="green">Casino de Confianza</p>
   </section>
@@ -209,9 +229,9 @@
   </div>
 
   <a class="whatsapp-button pulse" 
-     href="https://wa.me/5491126244516?text=Quiero%20el%20bono%20del%20100%25" 
+     href="https://wa.me/5491126251957?text=Quiero%20el%20bono%20del%20200%%25" 
      target="_blank"
-     id="whatsappBtn">
+     onclick="fbq('trackCustom', 'ClickWhatsApp')">
     <i class="fab fa-whatsapp"></i> ¡QUIERO MI BONO!
   </a>
 
@@ -229,18 +249,15 @@
   </div>
 
   <script>
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    let redirectionTimeout;
-
-    // Redirección automática después de 2 segundos
-    redirectionTimeout = setTimeout(() => {
-      window.location.href = "https://wa.me/5491126244516?text=Quiero%20el%20bono%20del%20100%25";
-    }, 2000);
-
-    // Si hacen clic en el botón antes, cancelar la redirección automática
-    whatsappBtn.addEventListener('click', () => {
-      clearTimeout(redirectionTimeout);
-    });
+    const whatsappBtn = document.querySelector('.whatsapp-button');
+    if(whatsappBtn) {
+      whatsappBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      whatsappBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+      });
+    }
   </script>
 </body>
 </html>
